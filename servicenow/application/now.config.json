@@ -1,0 +1,6 @@
+{
+  "scope": "x_1133115_sap_ri_0",
+  "scopeId": "a51fa867c30a4710bf0f12d4e40131c5",
+  "name": "SAP RISE Network Governance",
+  "tsconfigPath": "./src/server/tsconfig.json"
+}
