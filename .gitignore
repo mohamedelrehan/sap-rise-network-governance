@@ -1,0 +1,32 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# ServiceNow SDK
+.now/
+node_modules/
+dist/
+build/
+coverage/
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
