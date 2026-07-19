@@ -527,3 +527,80 @@ The solution is considered successful when:
 ---
 
 # End
+
+---
+
+# Zero Trust Access Architecture
+
+OpenZiti will provide the Zero Trust access layer for private automation,
+integration, validation, and operational services supporting the SAP RISE
+Network Governance platform.
+
+The standard ServiceNow user interface will initially use ServiceNow-native
+authentication, with enterprise SSO and MFA planned for production use.
+
+OpenZiti will protect private components including:
+
+- ServiceNow integration gateways
+- ServiceNow MID Servers
+- Azure DevOps self-hosted agents
+- Terraform runners
+- Validation services
+- Internal APIs
+- Administrative dashboards
+- Private SAP and Azure management endpoints
+
+## Access Model
+
+Users and workloads will receive identities rather than direct network access.
+
+Access will be granted according to:
+
+- User identity
+- Workload identity
+- Service identity
+- Environment
+- Role
+- Approved policy
+
+No private automation service should require public inbound exposure.
+
+## Logical Flow
+
+Enterprise Architect
+        |
+        v
+ServiceNow Governance
+        |
+        v
+Approved Request
+        |
+        v
+Private Integration Gateway
+        |
+        | OpenZiti
+        v
+Azure DevOps Agent
+        |
+        | OpenZiti
+        v
+Terraform Runner
+        |
+        v
+Azure and SAP RISE
+        |
+        v
+Validation Service
+        |
+        | OpenZiti
+        v
+ServiceNow Status Update
+
+## Implementation Phase
+
+OpenZiti integration is planned for a later phase after completion of the
+ServiceNow governance MVP and the initial CI/CD automation layer.
+
+A dedicated design will be maintained in:
+
+docs/architecture/ZERO-TRUST-ACCESS-ARCHITECTURE.md
