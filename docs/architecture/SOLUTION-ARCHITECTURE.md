@@ -125,37 +125,66 @@ Azure DevOps orchestrates.
 
 ---
 
-# 5. Business Process
+## 5. High-Level Solution Architecture
 
-Architecture
+The solution separates governance, automation, infrastructure deployment, and validation.
 
-↓
+```mermaid
+flowchart TB
+    User["Enterprise Architect / Network Engineer"]
 
-Network Connection
+    subgraph SN["ServiceNow Governance"]
+        Architecture["Architecture Record"]
+        Connection["Network Connection"]
+        Request["Implementation Request"]
+        Approval["Approval Workflow"]
+    end
 
-↓
+    subgraph AUTO["Automation Layer"]
+        Integration["Integration Gateway"]
+        Pipeline["Azure DevOps Pipeline"]
+        Terraform["Terraform"]
+        Validation["Validation Service"]
+    end
 
-Implementation Request
+    subgraph AZURE["Azure and SAP RISE"]
+        VWAN["Azure Virtual WAN"]
+        Firewall["Azure Firewall"]
+        ExpressRoute["ExpressRoute"]
+        Peering["Cross-Tenant Peering"]
+        SAP["SAP RISE / ECS"]
+    end
 
-↓
+    subgraph ZT["Zero Trust Access"]
+        OpenZiti["OpenZiti Fabric"]
+    end
 
-Approval
+    User --> Architecture
+    Architecture --> Connection
+    Connection --> Request
+    Request --> Approval
 
-↓
+    Approval --> Integration
+    Integration --> Pipeline
+    Pipeline --> Terraform
 
-Automation
+    Terraform --> VWAN
+    Terraform --> Firewall
+    Terraform --> ExpressRoute
 
-↓
+    ExpressRoute --> VWAN
+    VWAN --> Firewall
+    Firewall --> Peering
+    Peering --> SAP
 
-Deployment
+    Terraform --> Validation
+    Validation --> Request
 
-↓
-
-Validation
-
-↓
-
-Completed
+    OpenZiti -. Private access .-> Integration
+    OpenZiti -. Private access .-> Pipeline
+    OpenZiti -. Private access .-> Validation
+```
+**Figure 5-1 — SAP RISE Network Governance High-Level Solution Architecture**
 
 ---
 
