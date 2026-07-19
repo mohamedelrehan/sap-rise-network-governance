@@ -23,6 +23,10 @@ declare global {
                         table: 'sys_module'
                         id: '9043778d76d34a228eb6213b6fcad4de'
                     }
+                    sap_rise_network_governance_menu: {
+                        table: 'sys_app_application'
+                        id: 'ff01c53060ff4287a21903e8787124ff'
+                    }
                     src_server_script_ts: {
                         table: 'sys_module'
                         id: 'd8434ad5ec384ffda0aeec97d99584f1'
@@ -32,10 +36,35 @@ declare global {
                 composite: [
                     {
                         table: 'sys_choice_set'
+                        id: '012b3f13193947cebf2b3027e974fe17'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                        }
+                    },
+                    {
+                        table: 'sys_choice_set'
                         id: '01478c346c7c486084ab8199a1285f84'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'primary_region'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0341d2a12ca74588bda3f31595fa94c8'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'connectivity'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '06afb7609efe449ab02d188eeb901fb6'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                            value: 'remove'
                         }
                     },
                     {
@@ -58,11 +87,28 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '0d6f66b9fd3846e190a31ca7e85faeee'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'requested_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '0f1a9f2467b14e2d98914f99e0d3d9c3'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'sap_hosting_model'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1040833f63bf45c39df12cfc1bee3717'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
                         }
                     },
                     {
@@ -74,11 +120,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_choice'
+                        id: '1352f7feafd6461487622645978ca337'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            value: 'ztna'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '14ea2859fea841b3ba557eed75c2429b'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            value: 'approved'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '177d035db18b42e4882b711fe76b3444'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'approved'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '17c6b95e362b4025b90cb54d07931ee8'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '188a772a97124d84b272e6633a88a1b5'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'name'
+                            language: 'en'
                         }
                     },
                     {
@@ -100,10 +180,53 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1a9d5306a7ae4cd0b9db47845ac413d3'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'destination'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '1c3dc5cfc6ce4fed8376a1e477b0dae8'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                            value: 'planned'
+                        }
+                    },
+                    {
+                        table: 'sys_choice_set'
+                        id: '1c7ffab77f8e44859fe7fd5580dc24fa'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '2583599c806b43eba5b78ff5ae9b9b32'
                         key: {
                             logical_table_name: 'x_1133115_sap_ri_0_architecture'
+                            col_name_string: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2966e5ab28c444879d5a90af82d91228'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'architecture'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_index'
+                        id: '2d49df371aaa4d5bbfc242bd0ea031bd'
+                        key: {
+                            logical_table_name: 'x_1133115_sap_ri_0_request'
                             col_name_string: 'number'
                         }
                     },
@@ -134,6 +257,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '36aae3f4f431488ab7cc92555fee02f9'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3789adf60c294658b54ae73f0ac1c9ff'
                         key: {
@@ -148,6 +279,22 @@ declare global {
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'system_connectivity'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3d34a07d74994763892d503ec880a2a6'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3e9828fff610424497570bad7fa82524'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
                         }
                     },
                     {
@@ -169,6 +316,24 @@ declare global {
                     },
                     {
                         table: 'sys_choice'
+                        id: '44dcc315794d4132811520a166f4c6ba'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            value: 'expressroute'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '44ec7c95b087477e8d209249a4a83d02'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
                         id: '450a149f019c4dbe88a95dfc3f59948f'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
@@ -182,6 +347,15 @@ declare global {
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'lifecycle_status'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '46cb66424b5142a0970961396d7b77f9'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            value: 'submitted'
                         }
                     },
                     {
@@ -202,11 +376,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_choice'
+                        id: '4c3f908f7060496ea9b94ea96553e9e5'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            value: 'vwan'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '4d0022c4dad14187a0437f25b5da3a63'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '52aaf69d34f04b809a3abcff57fd5bd5'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            value: 'vpn'
                         }
                     },
                     {
@@ -245,12 +437,73 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5fe79b3cfdd84ba4bfb0ada44b21eac8'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'requested_by'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '645ead965942423e9a2a610ad5e78ec6'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'description'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '66b65165338d4750ac9ad0ac55e9872d'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6840d52acab44ae29482735572ab9f06'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6dc67763ad094d27be66ff77423ba68d'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '7398c41a1346494b9572314e808545aa'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '7430ff5126e94309ab8233fed7a0f067'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            value: 'draft'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '7529a79268e541ec99f79a88de32ed71'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                            value: 'private_link'
                         }
                     },
                     {
@@ -269,6 +522,15 @@ declare global {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'user_connectivity'
                             value: 'none'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '76db66992589414e96735006bc3044dd'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                            value: 'new'
                         }
                     },
                     {
@@ -299,11 +561,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '80aa939ca4d940fbbbf88ce7fbfcda0d'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '83d04ed8d5d7447d82011b6d6baa43e0'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'comments'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '883580a437234ddfaf8408c4fb933636'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'disaster_recovery_region'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '886b0109f61047a1bd212ba46d497cc9'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            value: 'rejected'
                         }
                     },
                     {
@@ -322,12 +610,62 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '8f16dac6917e4b01a6f3a9d0e821c8d4'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '909290e5223c4702978704f0d2919ec3'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'connectivity'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '92c071ca97534e98a7605e4be9ed3109'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '95718ead20f741c7bfcdb6d4d4bb3ebd'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                            value: 'deploying'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '965f536db9704fb6a2dfbe6990d1db76'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'disaster_recovery_region'
                             value: 'not_applicable'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '98157c0428024de09c178e0a0112fb5a'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9835459017684aba8bbad3ad8f1e97b2'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'architecture'
                         }
                     },
                     {
@@ -376,6 +714,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a6561076613a455bbaab760d4530491c'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'a77063645bb5438b9e9cd887f2bb2f52'
                         key: {
@@ -394,9 +740,34 @@ declare global {
                     },
                     {
                         table: 'sys_db_object'
+                        id: 'a7e44d377d374c00a018da2524a1f1bb'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
                         id: 'a9cabce625b6415a8f983204dfa6ad75'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'acba1e70d3574e8982e510d411dd6bc0'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'source'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b17f11119a7847e797ecb99de741368e'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'comments'
+                            language: 'en'
                         }
                     },
                     {
@@ -433,6 +804,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_choice_set'
+                        id: 'bbd08be7021e424f9c044daba4d80d27'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'bdd2990a2b094d01988dd5e2a230316a'
                         key: {
@@ -442,12 +821,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_index'
+                        id: 'c11e5acbf83d48968fac230df0b6a9f1'
+                        key: {
+                            logical_table_name: 'x_1133115_sap_ri_0_connectivity'
+                            col_name_string: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'c182c1ab69444daa8d41a398c7d5763d'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'architecture_owner'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'c6c688434b9448cb9fdc3051b40f9ff7'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                            value: 'retired'
                         }
                     },
                     {
@@ -477,6 +873,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'cd549a84bebf40108cab4302d7b76bcf'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'cf20b26170f845c39205d6b2f4a8152a'
                         key: {
@@ -486,12 +890,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'd0a9d1cce97f4f9cbe32323b122a1680'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'destination'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'd1c4037c1d504623b9ac15b09eac30cd'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'system_connectivity'
                             value: 'vpn'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd8f92be3d39643ed80e38fc3d5f9522b'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'source'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'dbb039d19109477bafbd6f17c1367031'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'status'
+                            value: 'operational'
                         }
                     },
                     {
@@ -523,6 +952,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'debf27a399d24cb8850326e3c36dfdb6'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'e3459264a70d469d9d45a6d0b9dae021'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
@@ -538,6 +975,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: 'e87ec0ebf60d44039cd5c2d1bb071bfb'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'eb660f4ec4c04b68bc8672bf9de59962'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'ebb708450a2d4769bc49ee6fe2f97181'
                         key: {
@@ -546,11 +999,46 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ebd7075874d14ed5a921473a8f9e3457'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'ec3dc86cb02c475ab5ac298777cd3894'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'request_type'
+                            value: 'change'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'efeb37b045d3402fa6ba566acdd626e5'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_request'
+                            element: 'status'
+                            value: 'implemented'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'f143c5eeaaf7428aba48e468085f718b'
                         key: {
                             name: 'x_1133115_sap_ri_0_architecture'
                             element: 'description'
+                        }
+                    },
+                    {
+                        table: 'sys_choice_set'
+                        id: 'f3ffb0678aa4428881beee32c94b8b33'
+                        key: {
+                            name: 'x_1133115_sap_ri_0_connectivity'
+                            element: 'connectivity_type'
                         }
                     },
                     {
